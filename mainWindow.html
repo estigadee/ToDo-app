@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="UTF-8">
+    <title>ToDo</title>
+
+    <!-- <link rel="shortcut icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAARVBMVEV6vOVNo9n///////9YreBUqt5ttuOFwed8veby+Pz///+01u5LodlEm9VdseNSptz///9ht+dZreHW6va/3/KTyuugz+wTjP8eAAAADHRSTlMBk5rPodRdKv77hes5OFG2AAABT0lEQVQ4y31T23bDIAwjDSRkAyfh9v+fOmMbAl03vbQ5ErIRtlIPNm1OhNGb+oBdOwTy4Qwh6P2dX7zwooBlPm58FZzdIQCYwWT33g8OASxhn3nPDqHE4xI0hWkGyOfOItbWHxmQQ2YmVeDvqxdoDnze1iZTK6J9V5yW+KPe4qa/1aLxVSEVAAVkcEXMd+AdO1wZLTLh3rjFFkNgQaw9ANwIzXfsTURW3F1g1ECjoLCgdIFVk4GDVgOaQnlbUooCe3LzlxUaBWO0EaOWGo/Dytng8ZTrU0rWT5OvetK6/lrsGCsPdM0Nj7thHGIXkAOO53GlISpxSK0HfK0XCShqNLDPLbgCPjd+9qRADIL0QDP1VR05qNwKSJKaR2qle2JcbH8UHmvAO8rQTmEVEB7uZ6y/OeyUMrTFQezT4rj/FmdaPREsH5e37+bv5f1z/X8AQyIurUf+0y4AAAAASUVORK5CYII=" >
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAARVBMVEV6vOVNo9n///////9YreBUqt5ttuOFwed8veby+Pz///+01u5LodlEm9VdseNSptz///9ht+dZreHW6va/3/KTyuugz+wTjP8eAAAADHRSTlMBk5rPodRdKv77hes5OFG2AAABT0lEQVQ4y31T23bDIAwjDSRkAyfh9v+fOmMbAl03vbQ5ErIRtlIPNm1OhNGb+oBdOwTy4Qwh6P2dX7zwooBlPm58FZzdIQCYwWT33g8OASxhn3nPDqHE4xI0hWkGyOfOItbWHxmQQ2YmVeDvqxdoDnze1iZTK6J9V5yW+KPe4qa/1aLxVSEVAAVkcEXMd+AdO1wZLTLh3rjFFkNgQaw9ANwIzXfsTURW3F1g1ECjoLCgdIFVk4GDVgOaQnlbUooCe3LzlxUaBWO0EaOWGo/Dytng8ZTrU0rWT5OvetK6/lrsGCsPdM0Nj7thHGIXkAOO53GlISpxSK0HfK0XCShqNLDPLbgCPjd+9qRADIL0QDP1VR05qNwKSJKaR2qle2JcbH8UHmvAO8rQTmEVEB7uZ6y/OeyUMrTFQezT4rj/FmdaPREsH5e37+bv5f1z/X8AQyIurUf+0y4AAAAASUVORK5CYII="> -->
+    
+  </head>
+  <body>
+    <h1>ToDo</h1>
+    <ul></ul>
+
+
+    <script>
+      const electron = require('electron');
+      const { ipcRenderer } = electron;
+      const ul = document.querySelector('ul');
+
+      ipcRenderer.on('note:add', function(e,note){
+        const li = document.createElement('li');
+        const noteText = document.createTextNode(note);
+        li.appendChild(noteText);
+        ul.appendChild(li);
+      });
+
+    </script>
+  </body>
+</html>
