@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html land="en">
+<head>
+    <title>Add ToDo note</title>>
+</head>
+<body>
+    <form>
+        <div>
+            <label>Enter note</label>
+            <input type="text" id="note" autofocus>
+        </div>
+        <button type="submit">add note</button >
+    </form>
+
+    <script>
+        const electron = require('electron');
+        const {ipcRenderer} = electron;
+
+        const form = document.querySelector('form');
+        form.addEventListener('submit', submitForm);
+
+        function submitForm(e){
+            e.preventDefault();
+            const note = document.querySelector('#note').value;
+            ipcRenderer.send('note:add', note);
+        }
+    </script>
+</body>
+</html>

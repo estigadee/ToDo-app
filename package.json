@@ -1,0 +1,26 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "Desktop application for organising daily activities",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estigadee/ToDo-app.git"
+  },
+  "author": "estigadee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/estigadee/ToDo-app/issues"
+  },
+  "homepage": "https://github.com/estigadee/ToDo-app#readme",
+  "devDependencies": {
+    "electron": "^18.0.1"
+  },
+  "dependencies": {
+    "electron-version": "^2.0.1"
+  }
+}
