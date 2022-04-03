@@ -7,10 +7,6 @@ Desktop application for organising daily activities
 
 Install NodeJS from https://nodejs.org/en/
 
-## Install Electron Forge
-
-    npm install -g electron-forge
-
 ## Cloning the repo
 
     git clone git@github.com:estigadee/ToDo-app.git
